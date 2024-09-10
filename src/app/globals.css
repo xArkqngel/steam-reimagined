@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.cdnfonts.com/css/motiva-sans');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,7 +25,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Motiva Sans', sans-serif;
 }
 
 @layer utilities {
