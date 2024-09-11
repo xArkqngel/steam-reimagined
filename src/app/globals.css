@@ -20,6 +20,10 @@
   --accent-green: #a1cd44;
   --accent-red: #cd5444;
   --accent-yellow: #c1b15f;
+  --gpStoreDarkGrey: #2a475e;
+  --gpStoreDarkerGrey: #1b2838;
+  --gradient-store-bg: linear-gradient(180deg, var(--gpStoreDarkGrey) 0%, var(--gpStoreDarkerGrey) 80%);
+  --gradient-friends-bg: linear-gradient(180deg, #313e63 0%, #1E2329 20%);
 }
 
 body {

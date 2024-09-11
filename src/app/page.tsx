@@ -1,4 +1,5 @@
 import Button from "@/components/button/Button";
+import Friends from "@/components/friends/Friends";
 import Notifications from "@/components/notifications/Notifications";
 import { IoIosNotifications } from "react-icons/io";
 import { MdPeopleAlt } from "react-icons/md";
@@ -11,7 +12,9 @@ export default function Home() {
           <Notifications />
         </Button>
         <Button icon={<IoIosNotifications size={25} />} />
-        <Button icon={<MdPeopleAlt size={25} />} number={4}></Button>
+        <Button icon={<MdPeopleAlt size={25} />} number={4}>
+          <Friends />
+        </Button>
         <Button icon={<MdPeopleAlt size={25} />} />
       </div>
     </div>
