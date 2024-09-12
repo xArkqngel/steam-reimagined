@@ -17,7 +17,7 @@ function Button({ icon, children, number }: ButtonProps) {
   return (
     <>
       <div className="relative inline-block w-max" onClick={handleToggle}>
-        <button className="bg-[color:var(--bg-highlight)] py-2 px-4 text-[color:var(--text-dim)] rounded-md">
+        <button className="bg-[color:var(--bg-highlight)] py-2 px-4 text-[color:var(--text-dim)] rounded-sm">
           {icon}
         </button>
         {number && (

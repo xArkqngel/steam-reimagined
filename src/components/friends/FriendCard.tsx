@@ -1,4 +1,4 @@
-import { Friend } from "@/consts/users";
+import { Friend } from "@/types/types";
 import FriendPP from "./FriendPP";
 
 function FriendCard(friend: Friend) {

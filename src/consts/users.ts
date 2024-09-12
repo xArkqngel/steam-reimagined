@@ -1,9 +1,4 @@
-export type Friend = {
-  name: string;
-  friendStatus: string;
-  text?: string;
-  profilePicture: string;
-};
+import { Friend } from "@/types/types";
 
 export const friends: Friend[] = [
   {
