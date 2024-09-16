@@ -2,7 +2,7 @@ import { Option } from "@/types/types";
 import Link from "next/link";
 
 interface DropdownProps {
-  options: Option[];
+  options?: Option[];
 }
 
 function Dropdown({ options }: DropdownProps) {
