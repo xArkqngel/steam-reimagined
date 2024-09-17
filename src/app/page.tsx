@@ -1,9 +1,5 @@
-import StoreHeader from "@/components/header/subheader/StoreHeader";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="bg-black">
-      <StoreHeader />
-    </div>
-  );
+  redirect("/store");
 }

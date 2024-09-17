@@ -1,43 +1,43 @@
 export const headerOptions = [
   {
     name: "STORE",
-    href: "/",
+    href: "/store",
     options: [
       {
         name: "Home",
-        href: "/",
+        href: "/store",
       },
       {
         name: "Browse",
-        href: "/",
+        href: "/store/browse",
       },
       {
         name: "Discover",
-        href: "/",
+        href: "/store/discover",
       },
       {
         name: "Points Shop",
-        href: "/",
+        href: "/store/points-shop",
       },
       {
         name: "Gift Cards",
-        href: "/",
+        href: "/store/gift-cards",
       },
       {
         name: "News",
-        href: "/",
+        href: "/store/news",
       },
       {
         name: "Stats",
-        href: "/",
+        href: "/store/stats",
       },
       {
         name: "Wishlist",
-        href: "/",
+        href: "/store/wishlist",
       },
       {
         name: "Cart",
-        href: "/",
+        href: "/store/cart",
       },
     ],
   },

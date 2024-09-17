@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.cdnfonts.com/css/motiva-sans');
+@import url("https://fonts.cdnfonts.com/css/motiva-sans");
 
 :root {
   --background: #ffffff;
@@ -11,25 +11,32 @@
   --text-dim: #76808c;
   --bg-main: #0e141b;
   --bg-main-50: #0e141b80;
+  --bg-main-20: #0e141b33;
   --bg-highlight: #1e2329;
   --bg-hover: #313843;
+  --bg-hover-50: #31384380;
   --bg-secondary: #14344b;
   --bg-tertiary: #212b45;
   --color-primary: #66c0f4;
   --color-secondary: #4b619b;
+  --color-secondary-80: #4b609b30;
   --accent-green: #a1cd44;
   --accent-red: #cd5444;
   --accent-yellow: #c1b15f;
   --gpStoreDarkGrey: #2a475e;
   --gpStoreDarkerGrey: #1b2838;
-  --gradient-store-bg: linear-gradient(180deg, var(--gpStoreDarkGrey) 0%, var(--gpStoreDarkerGrey) 80%);
-  --gradient-friends-bg: linear-gradient(180deg, #313e63 0%, #1E2329 20%);
+  --gradient-store-bg: linear-gradient(
+    180deg,
+    var(--gpStoreDarkGrey) 0%,
+    var(--gpStoreDarkerGrey) 80%
+  );
+  --gradient-friends-bg: linear-gradient(180deg, #313e63 0%, #1e2329 20%);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Motiva Sans', sans-serif;
+  font-family: "Motiva Sans", sans-serif;
 }
 
 @layer utilities {
