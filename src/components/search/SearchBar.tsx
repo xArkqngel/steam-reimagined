@@ -5,6 +5,7 @@ import debounce from "lodash/debounce";
 import { gameSearchType } from "@/types/search";
 import Image from "next/image";
 import { IoIosSearch } from "react-icons/io";
+import Link from "next/link";
 
 const SEARCH_GAMES = gql`
   query SearchGames($query: String!, $maxResults: Int) {
@@ -58,23 +59,22 @@ const SearchBar = () => {
         <IoIosSearch size={25} />
       </div>
 
-      <div className="absolute z-10 w-[400px] text-[color:var(--text-main)] bg-[color:var(--bg-highlight)] right-0 opacity-100 transition-opacity duration-200">
+      <div className="absolute rounded-sm z-10 w-[400px] text-[color:var(--text-main)] bg-[color:var(--bg-highlight)] right-0 opacity-100 transition-opacity duration-200">
         {results.map((game: gameSearchType) => (
-          <div
-            key={game.id}
-            className="flex flex-row gap-2 p-1 cursor-pointer hover:bg-[color:var(--bg-hover)]"
-          >
-            <Image
-              width={120}
-              height={45}
-              src={game.capsule_image}
-              alt={game.name}
-            />
-            <div className="flex flex-col">
-              <p className="truncate w-60">{game.name}</p>
-              <p>{game.price}</p>
+          <Link key={game.id} href={`/game/${game.id}`}>
+            <div className="flex flex-row gap-2 p-1 cursor-pointer hover:bg-[color:var(--bg-hover)]">
+              <Image
+                width={120}
+                height={45}
+                src={game.capsule_image}
+                alt={game.name}
+              />
+              <div className="flex flex-col">
+                <p className="truncate w-60">{game.name}</p>
+                <p>{game.price}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

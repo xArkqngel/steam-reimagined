@@ -5,6 +5,7 @@ const nextConfig = {
       "avatars.akamai.steamstatic.com",
       "store.akamai.steamstatic.com",
       "shared.akamai.steamstatic.com",
+      "cdn.akamai.steamstatic.com",
     ],
   },
 };
