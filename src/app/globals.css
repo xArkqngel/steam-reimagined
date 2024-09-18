@@ -27,8 +27,8 @@
   --gpStoreDarkerGrey: #1b2838;
   --gradient-store-bg: linear-gradient(
     180deg,
-    var(--gpStoreDarkGrey) 0%,
-    var(--gpStoreDarkerGrey) 80%
+    var(--gpStoreDarkerGrey) 0%,
+    var(--gpStoreDarkGrey) 80%
   );
   --gradient-friends-bg: linear-gradient(180deg, #313e63 0%, #1e2329 20%);
 }
