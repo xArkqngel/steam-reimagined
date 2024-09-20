@@ -24,15 +24,15 @@ function HeaderOption({ children, name, href }: HeaderOptionProps) {
       onMouseLeave={handleMouseLeave}
     >
       <Link href={href || "/"}>
-        <h1
-          className={`text-lg font-bold cursor-pointer transition-colors ${
+        <h2
+          className={`text-base font-bold cursor-pointer transition-colors ${
             isActive || isHovered
               ? "text-[color:var(--color-primary)]"
               : "text-[color:var(--text-main)]"
           }`}
         >
           {name}
-        </h1>
+        </h2>
       </Link>
       {isHovered && (
         <div className="absolute z-10 pt-2 left-0 w-full opacity-100 transition-opacity duration-200">

@@ -1,10 +1,13 @@
-export type GameQueryType = {
+export type GameSlideType = {
   id: string;
   name: string;
   header_image: string;
   screenshots: string[];
   short_description: string;
   price: number;
+  mac: boolean;
+  windows: boolean;
+  linux: boolean;
   discount: string;
   genres: string[];
   tags: [

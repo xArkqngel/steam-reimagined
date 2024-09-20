@@ -1,7 +1,11 @@
-import GameSlide from "@/components/game/GameSlide";
+import GameSlide from "@/components/slider/GameSlide";
 import Section from "@/components/section/Section";
 import Slider from "@/components/slider/Slider";
-import { gameFeatureSliderIds } from "@/consts/slider";
+import {
+  gameFeatureSliderIds,
+  gameSpecialOfferSliderIds,
+} from "@/consts/slider";
+import GameCard from "@/components/card/GameCard";
 
 export default function StorePage() {
   return (
@@ -27,12 +31,9 @@ export default function StorePage() {
         </Section>
         <Section title="Special Offers" button={<button>SEE MORE</button>}>
           <Slider
-            content={[
-              <p key={1}>hola11</p>,
-              <p key={2}>hola12</p>,
-              <p key={3}>hola21</p>,
-              <p key={4}>hola22</p>,
-            ]}
+            content={gameSpecialOfferSliderIds.map((id) => (
+              <GameCard key={id} gameID={id} />
+            ))}
             itemsPerSlide={3}
           />
         </Section>

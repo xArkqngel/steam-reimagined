@@ -21,7 +21,7 @@ function AccountDropdown({
         className="flex flex-row gap-2 p-1 bg-[color:var(--bg-highlight)] rounded-sm items-center cursor-pointer"
         onClick={onToggle}
       >
-        <FriendPP friend={friend} borderColor="transparent" size={30} />
+        <FriendPP friend={friend} borderColor="transparent" size={28} />
         <p className="text-[color:var(--text-main)]">{friend.name}</p>
         <p className="text-[color:var(--text-dim)]">$343.117</p>
         <FaChevronDown className="text-[color:var(--text-main)] mx-2" />

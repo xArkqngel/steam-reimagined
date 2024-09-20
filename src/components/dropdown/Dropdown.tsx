@@ -7,12 +7,12 @@ interface DropdownProps {
 
 function Dropdown({ options }: DropdownProps) {
   return (
-    <div className="text-[color:var(--text-main)] bg-[color:var(--bg-highlight)] w-56 rounded-sm">
+    <div className="text-[color:var(--text-main)] bg-[color:var(--bg-highlight)] w-48 rounded-sm">
       <ul>
         {options &&
           options.map((option) => (
             <Link href={option.href} key={option.name}>
-              <li className="px-4 py-3 hover:bg-[color:var(--bg-hover)]">
+              <li className="px-4 py-3 hover:bg-[color:var(--bg-hover)] text-sm">
                 {option.name}
               </li>
             </Link>

@@ -41,7 +41,7 @@ function Header() {
       <div className="flex flex-row gap-4 items-center">
         <Button
           number={1}
-          icon={<IoIosNotifications size={25} />}
+          icon={<IoIosNotifications size={20} />}
           open={openComponent === "notifications"}
           onToggle={() => handleToggle("notifications")}
         >
@@ -49,7 +49,7 @@ function Header() {
         </Button>
         <Button
           number={4}
-          icon={<MdPeopleAlt size={25} />}
+          icon={<MdPeopleAlt size={20} />}
           open={openComponent === "friends"}
           onToggle={() => handleToggle("friends")}
           openRight
