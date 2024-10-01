@@ -8,7 +8,7 @@ function Section({ children, title, button }: SectionProps) {
   return (
     <section className="flex flex-col w-[1200px]">
       <div className="flex flex-row justify-between text-[color:var(--text-main)]">
-        <h2 className="text-lg">{title}</h2>
+        <h2 className="text-base font-semibold pb-4">{title}</h2>
         {button}
       </div>
       {children}

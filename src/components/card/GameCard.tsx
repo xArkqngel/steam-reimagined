@@ -42,14 +42,23 @@ function GameCard({ gameID }: GameCardProps) {
   }, [gameID, getGame]);
 
   if (loading) {
-    return <div>loading...</div>;
+    return (
+      <article className="flex flex-col gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm">
+        <div className="bg-gray-300 animate-pulse w-[341px] h-[159px] rounded-sm"></div>
+        <div className="bg-gray-300 animate-pulse w-[341px] h-[28px] rounded-sm"></div>
+        <div className="flex flex-row justify-between">
+          <div className="bg-gray-300 animate-pulse w-[31px] h-[34px] rounded-sm"></div>
+          <div className="bg-gray-300 animate-pulse w-[218px] h-[34px] rounded-sm"></div>
+        </div>
+      </article>
+    );
   }
-  if (error) return <div>Error fetching game data.</div>;
+  if (error) return <article>Error fetching game data.</article>;
 
   if (!game) return null;
 
   return (
-    <div className="flex flex-col gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm">
+    <article className="flex flex-col gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm">
       <Image
         src={game.header_image}
         alt={game.name}
@@ -78,7 +87,7 @@ function GameCard({ gameID }: GameCardProps) {
           />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
