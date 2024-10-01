@@ -18,10 +18,10 @@ export default function StorePage() {
         Your browser does not support the video tag.
       </video>
       <div
-        className="flex flex-col px-52 py-20 gap-20"
+        className="flex flex-col items-center py-20 gap-20 "
         style={{ background: "var(--gradient-store-bg)" }}
       >
-        <Section title="FEATURED" button={<button>hola</button>}>
+        <Section title="FEATURED">
           <Slider
             content={gameFeatureSliderIds.map((id) => (
               <GameSlide key={id} gameID={id} />
@@ -29,7 +29,7 @@ export default function StorePage() {
             itemsPerSlide={1}
           />
         </Section>
-        <Section title="Special Offers" button={<button>SEE MORE</button>}>
+        <Section title="Special Offers">
           <Slider
             content={gameSpecialOfferSliderIds.map((id) => (
               <GameCard key={id} gameID={id} />
