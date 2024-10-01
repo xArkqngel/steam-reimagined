@@ -37,7 +37,7 @@ const GAME = gql`
 
 function GameSlide({ gameID }: GameSlideProps) {
   const router = useRouter();
-  const [game, setGame] = useState<GameSlideType | null>(null); // Initially null
+  const [game, setGame] = useState<GameSlideType | null>(null);
 
   const [getGame, { loading, error }] = useLazyQuery(GAME, {
     variables: { gameId: gameID },

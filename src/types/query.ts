@@ -17,3 +17,11 @@ export type GameSlideType = {
     }
   ];
 };
+
+export type GameCardType = {
+  id: string;
+  name: string;
+  header_image: string;
+  price: number;
+  discount: string;
+};

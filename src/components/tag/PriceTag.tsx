@@ -15,7 +15,7 @@ function PriceTag({ price, discount }: PriceTagProps) {
           </div>
           <div className="flex flex-col text-xs">
             <div className="text-[color:var(--text-dim)]">
-              <del>${originalPrice}</del>
+              <del>${originalPrice.toFixed(2)}</del>
             </div>
             <div className="text-[color:var(--accent-green)]">${price}</div>
           </div>
