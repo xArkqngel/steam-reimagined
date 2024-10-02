@@ -36,13 +36,11 @@ function Slider({ content, cols, rows }: SliderProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center text-white bg-[color:var(--bg-main-20)] px-2">
-        <div className="flex items-center">
-          <button onClick={handlePrevious}>
+      <div className="flex flex-col items-center text-white bg-[color:var(--bg-main-20)] px-2 w-full">
+        <div className="flex items-center justify-center">
+          <button className="pr-2" onClick={handlePrevious}>
             <IoIosArrowBack size={25} />
           </button>
-
-          {/* Render grid with multiple rows and columns based on `rows` and `cols` */}
           <div
             className={`grid gap-2`}
             style={{
@@ -51,19 +49,16 @@ function Slider({ content, cols, rows }: SliderProps) {
             }}
           >
             {visibleItems.map((item, index) => (
-              <div key={index} className="p-2">
+              <div key={index} className="">
                 {item}
               </div>
             ))}
           </div>
-
-          <button onClick={handleNext}>
+          <button className="pl-2" onClick={handleNext}>
             <IoIosArrowForward size={25} />
           </button>
         </div>
       </div>
-
-      {/* Pagination indicator */}
       <div className="flex gap-1 mt-2">
         {Array.from({ length: totalSlides }, (_, index) => (
           <div

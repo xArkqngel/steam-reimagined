@@ -60,7 +60,7 @@ function HorizontalGameCard({ gameID }: GameCardProps) {
 
   return (
     <article
-      className="flex flex-row gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm"
+      className="flex flex-row gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm w-full"
       key={game.id}
     >
       <Image
@@ -71,7 +71,7 @@ function HorizontalGameCard({ gameID }: GameCardProps) {
         className="rounded-xs cursor-pointer"
         onClick={() => router.push(`/game/${gameID}`)}
       />
-      <div className="flex flex-col justify-between w-full">
+      <div className="flex flex-col justify-between w-[310px]">
         <h3
           className="text-lg cursor-pointer truncate"
           onClick={() => router.push(`/game/${gameID}`)}
@@ -90,7 +90,7 @@ function HorizontalGameCard({ gameID }: GameCardProps) {
                   text="Play Now"
                   textColor="var(--bg-main)"
                   bgColor="var(--accent-green)"
-                  onToggle={() => router.push(`/game/${gameID}`)}
+                  onToggle={() => router.push}
                 />
               </>
             ) : (
