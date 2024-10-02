@@ -3,9 +3,12 @@ import Section from "@/components/section/Section";
 import Slider from "@/components/slider/Slider";
 import {
   gameFeatureSliderIds,
+  gameFreeToPlaySliderIds,
+  gameNewTrendingSliderIds,
   gameSpecialOfferSliderIds,
 } from "@/consts/slider";
 import GameCard from "@/components/card/GameCard";
+import HorizontalGameCard from "@/components/card/HorizontalGameCard";
 
 export default function StorePage() {
   return (
@@ -26,7 +29,7 @@ export default function StorePage() {
             content={gameFeatureSliderIds.map((id) => (
               <GameSlide key={id} gameID={id} />
             ))}
-            itemsPerSlide={1}
+            cols={1}
           />
         </Section>
         <Section title="Special Offers">
@@ -34,7 +37,32 @@ export default function StorePage() {
             content={gameSpecialOfferSliderIds.map((id) => (
               <GameCard key={id} gameID={id} />
             ))}
-            itemsPerSlide={3}
+            cols={3}
+          />
+        </Section>
+        <Section title="New & Trending">
+          <Slider
+            content={gameNewTrendingSliderIds.map((id) => (
+              <GameCard key={id} gameID={id} />
+            ))}
+            cols={3}
+          />
+        </Section>
+        <Section title="Free To Play">
+          <Slider
+            content={gameFreeToPlaySliderIds.map((id) => (
+              <GameCard key={id} gameID={id} />
+            ))}
+            cols={3}
+          />
+        </Section>
+        <Section title="Top Sellers">
+          <Slider
+            content={gameFreeToPlaySliderIds.map((id) => (
+              <HorizontalGameCard key={id} gameID={id} />
+            ))}
+            cols={2}
+            rows={3}
           />
         </Section>
       </div>

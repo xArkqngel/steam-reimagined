@@ -27,7 +27,7 @@ const GAME = gql`
   }
 `;
 
-function GameCard({ gameID }: GameCardProps) {
+function HorizontalGameCard({ gameID }: GameCardProps) {
   const router = useRouter();
   const [game, setGame] = useState<GameCardType | null>(null);
 
@@ -44,10 +44,10 @@ function GameCard({ gameID }: GameCardProps) {
 
   if (loading) {
     return (
-      <article className="flex flex-col gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm">
+      <article className="flex flex-row gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm">
         <div className="bg-gray-300 animate-pulse w-[341px] h-[159px] rounded-sm"></div>
         <div className="bg-gray-300 animate-pulse w-[341px] h-[28px] rounded-sm"></div>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col justify-between">
           <div className="bg-gray-300 animate-pulse w-[31px] h-[34px] rounded-sm"></div>
           <div className="bg-gray-300 animate-pulse w-[218px] h-[34px] rounded-sm"></div>
         </div>
@@ -60,55 +60,57 @@ function GameCard({ gameID }: GameCardProps) {
 
   return (
     <article
-      className="flex flex-col gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm"
+      className="flex flex-row gap-2 p-2 bg-[color:var(--bg-main)] rounded-sm"
       key={game.id}
     >
       <Image
         src={game.header_image}
         alt={game.name}
-        width={379}
-        height={197}
+        width={230}
+        height={101}
         className="rounded-xs cursor-pointer"
         onClick={() => router.push(`/game/${gameID}`)}
       />
-      <h3
-        className="text-lg cursor-pointer truncate"
-        onClick={() => router.push(`/game/${gameID}`)}
-      >
-        {game.name}
-      </h3>
-      <div className="flex flex-row justify-between">
-        <OSTag os="windows" />
-        <div className="flex flex-row gap-2 items-center">
-          {game.price === 0 ? (
-            <>
-              <span className="text-xs text-[color:var(--text-dim)] pr-2">
-                Free to Play
-              </span>
-              <Button
-                text="Play Now"
-                textColor="var(--bg-main)"
-                bgColor="var(--accent-green)"
-                onToggle={() => router.push(`/game/${gameID}`)}
-              />
-            </>
-          ) : (
-            <>
-              <span className="text-xs text-[color:var(--text-dim)]">
-                {game.discount === "0" ? "" : getRandomDateMessage()}
-              </span>
-              <PriceTag price={game.price} discount={game.discount} />
-              <Button
-                icon={<IoIosHeartEmpty size={20} />}
-                textColor="var(--text-main)"
-                onToggle={() => {}}
-              />
-            </>
-          )}
+      <div className="flex flex-col justify-between w-full">
+        <h3
+          className="text-lg cursor-pointer truncate"
+          onClick={() => router.push(`/game/${gameID}`)}
+        >
+          {game.name}
+        </h3>
+        <div className="flex flex-row justify-between">
+          <OSTag os="windows" />
+          <div className="flex flex-rcw gap-2 items-center">
+            {game.price === 0 ? (
+              <>
+                <span className="text-xs text-[color:var(--text-dim)] pr-2">
+                  Free to Play
+                </span>
+                <Button
+                  text="Play Now"
+                  textColor="var(--bg-main)"
+                  bgColor="var(--accent-green)"
+                  onToggle={() => router.push(`/game/${gameID}`)}
+                />
+              </>
+            ) : (
+              <>
+                <span className="text-xs text-[color:var(--text-dim)]">
+                  {game.discount === "0" ? "" : getRandomDateMessage()}
+                </span>
+                <PriceTag price={game.price} discount={game.discount} />
+                <Button
+                  icon={<IoIosHeartEmpty size={20} />}
+                  textColor="var(--text-main)"
+                  onToggle={() => {}}
+                />
+              </>
+            )}
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-export default GameCard;
+export default HorizontalGameCard;

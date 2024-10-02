@@ -71,7 +71,10 @@ function GameSlide({ gameID }: GameSlideProps) {
   if (!game) return null;
 
   return (
-    <article className="flex flex-row p-2 bg-[color:var(--bg-main)] rounded-sm">
+    <article
+      className="flex flex-row p-2 bg-[color:var(--bg-main)] rounded-sm"
+      key={game.id}
+    >
       <div className="cursor-pointer w-2/3">
         <Image
           src={`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${game.id}/capsule_616x353.jpg`}

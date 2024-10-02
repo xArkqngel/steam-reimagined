@@ -4,34 +4,35 @@ import React, { useState } from "react";
 
 interface SliderProps {
   content: React.ReactNode[];
-  itemsPerSlide: number;
+  cols: number;
+  rows?: number; // Optional prop to define the number of rows
 }
 
-function Slider({ content, itemsPerSlide }: SliderProps) {
+function Slider({ content, cols, rows }: SliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const totalSlides = Math.ceil(content.length / itemsPerSlide);
+  // If rows is passed, calculate how many items should be displayed per slide (rows * cols)
+  const itemsPerPage = rows ? rows * cols : cols;
+
+  const totalSlides = Math.ceil(content.length / itemsPerPage);
 
   const handleNext = () => {
-    if (currentIndex + itemsPerSlide >= content.length) {
+    if (currentIndex + itemsPerPage >= content.length) {
       setCurrentIndex(0);
     } else {
-      setCurrentIndex(currentIndex + itemsPerSlide);
+      setCurrentIndex(currentIndex + itemsPerPage);
     }
   };
 
   const handlePrevious = () => {
-    if (currentIndex - itemsPerSlide < 0) {
-      setCurrentIndex((totalSlides - 1) * itemsPerSlide);
+    if (currentIndex - itemsPerPage < 0) {
+      setCurrentIndex((totalSlides - 1) * itemsPerPage);
     } else {
-      setCurrentIndex(currentIndex - itemsPerSlide);
+      setCurrentIndex(currentIndex - itemsPerPage);
     }
   };
 
-  const visibleItems = content.slice(
-    currentIndex,
-    currentIndex + itemsPerSlide
-  );
+  const visibleItems = content.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
     <div className="flex flex-col items-center">
@@ -40,24 +41,35 @@ function Slider({ content, itemsPerSlide }: SliderProps) {
           <button onClick={handlePrevious}>
             <IoIosArrowBack size={25} />
           </button>
-          <div className="flex gap-2">
+
+          {/* Render grid with multiple rows and columns based on `rows` and `cols` */}
+          <div
+            className={`grid gap-2`}
+            style={{
+              gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+              gridTemplateRows: rows ? `repeat(${rows}, auto)` : undefined,
+            }}
+          >
             {visibleItems.map((item, index) => (
               <div key={index} className="p-2">
                 {item}
               </div>
             ))}
           </div>
+
           <button onClick={handleNext}>
             <IoIosArrowForward size={25} />
           </button>
         </div>
       </div>
+
+      {/* Pagination indicator */}
       <div className="flex gap-1 mt-2">
         {Array.from({ length: totalSlides }, (_, index) => (
           <div
             key={index}
             className={`w-4 h-2 rounded-sm ${
-              currentIndex / itemsPerSlide === index
+              currentIndex / itemsPerPage === index
                 ? "bg-[color:var(--color-secondary)]"
                 : "bg-[color:var(--bg-main)]"
             }`}
