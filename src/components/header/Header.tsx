@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <header className="flex flex-row items-center justify-between p-4 text-[color:var(--text-main)] bg-[color:var(--bg-main)]">
-      <div className="flex flex-row gap-16 cursor-pointer">
+      <div className="flex flex-row gap-16 cursor-pointer pl-10">
         <Link href="/">
           <Image
             src="/static/images/logo_steam.svg"

@@ -30,6 +30,8 @@ export default function StorePage() {
               <GameSlide key={id} gameID={id} />
             ))}
             cols={1}
+            autoSlide
+            autoSlideInterval={5000}
           />
         </Section>
         <Section title="Special Offers">

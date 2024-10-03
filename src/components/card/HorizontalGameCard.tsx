@@ -78,7 +78,7 @@ function HorizontalGameCard({ gameID }: GameCardProps) {
         >
           {game.name}
         </h3>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between items-center">
           <OSTag os="windows" />
           <div className="flex flex-rcw gap-2 items-center">
             {game.price === 0 ? (
